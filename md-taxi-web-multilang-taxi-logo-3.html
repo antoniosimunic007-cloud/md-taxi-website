@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M&D TAXI — Damir Milokanović</title>
+<meta name="description" content="M&D TAXI — privatni taxi i transferi u Istri, Hrvatskoj, Sloveniji, Italiji i šire.">
+<style>
+:root{--bg:#090909;--card:#131313;--yellow:#ffc400;--white:#f5f5f2;--muted:#999;--line:#292929}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{position:fixed;top:0;left:0;right:0;z-index:10;background:#090909e8;border-bottom:1px solid #222;backdrop-filter:blur(12px)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}
+.logo{font-size:22px;font-weight:900;letter-spacing:.04em}.logo span{color:var(--yellow)}.sub{display:block;color:#888;font-size:9px;letter-spacing:.2em;margin-top:2px}
+.taxi-logo{width:52px;height:42px;position:relative;display:flex;align-items:center;justify-content:center}
+.taxi-logo .roof{position:absolute;width:27px;height:13px;top:5px;border:3px solid var(--yellow);border-bottom:0;border-radius:14px 14px 0 0}
+.taxi-logo .body{position:absolute;width:46px;height:18px;top:17px;border:3px solid var(--yellow);border-radius:8px 10px 6px 6px}
+.taxi-logo .body:before,.taxi-logo .body:after{content:"";position:absolute;width:7px;height:7px;background:var(--yellow);border-radius:50%;bottom:-6px}
+.taxi-logo .body:before{left:5px}.taxi-logo .body:after{right:5px}
+.taxi-logo .check{position:absolute;top:27px;left:11px;width:26px;height:4px;background:repeating-linear-gradient(90deg,var(--yellow) 0 4px,transparent 4px 8px)}
+nav{display:flex;gap:25px;font-size:12px;font-weight:800;align-items:center}nav a:hover{color:var(--yellow)}
+.header-right{display:flex;align-items:center;gap:18px}.langs{display:flex;gap:4px;border:1px solid #333;border-radius:999px;padding:4px;background:#111}.langs button{border:0;background:transparent;color:#aaa;font-size:10px;font-weight:900;padding:7px 9px;border-radius:999px;cursor:pointer;transition:.2s}.langs button:hover{color:#fff;background:#222}.langs button.active{background:var(--yellow);color:#111}
+.hero{min-height:850px;padding-top:150px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 82% 25%,#ffc40025,transparent 28%),linear-gradient(135deg,#080808,#151515,#080808)}
+.hero:after{content:"";position:absolute;width:650px;height:650px;border:1px solid #ffc40025;border-radius:50%;right:-300px;bottom:-300px;box-shadow:0 0 0 60px #ffc4000b,0 0 0 120px #ffc40006}
+.eyebrow{color:var(--yellow);font-size:12px;font-weight:900;letter-spacing:.25em;margin-bottom:22px}
+h1{font-size:clamp(48px,8vw,92px);line-height:.88;letter-spacing:-.05em;margin:0;text-transform:uppercase}h1 span{color:var(--yellow)}
+.lead{max-width:620px;color:#bbb;font-size:18px;line-height:1.65;margin:28px 0}
+.routes{display:flex;gap:9px;flex-wrap:wrap}.route{border:1px solid #3a3a3a;border-radius:99px;padding:8px 13px;font-size:11px;font-weight:900;letter-spacing:.1em}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.btn{padding:15px 22px;border-radius:10px;font-size:12px;font-weight:900;letter-spacing:.08em;display:inline-block}.yellow{background:var(--yellow);color:#111}.dark{border:1px solid #444;background:#151515}.dark:hover{border-color:var(--yellow);color:var(--yellow)}
+.direct{position:absolute;right:6%;bottom:95px;width:320px;padding:25px;border:1px solid #333;background:#111e;border-radius:22px;z-index:2}.direct small{color:#888;font-weight:900;letter-spacing:.18em}.phone{font-size:27px;font-weight:900;margin:10px 0}.phone b{color:var(--yellow)}
+section{padding:95px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}.kicker{font-size:11px;color:var(--yellow);font-weight:900;letter-spacing:.22em}h2{font-size:clamp(34px,5vw,56px);line-height:1;margin:8px 0 0;letter-spacing:-.04em}.head p{max-width:450px;color:#888}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;min-height:185px;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#555}.icon{font-size:30px;color:var(--yellow);margin-bottom:24px}.card h3{font-size:17px;margin:0 0 8px}.card p{font-size:13px;color:#888;margin:0;line-height:1.55}
+.darksec{background:#0e0e0e;border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e}.dest{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.place{background:#131313;border:1px solid #292929;border-radius:16px;padding:25px;font-size:18px;font-weight:900}.place small{display:block;color:var(--yellow);font-size:10px;letter-spacing:.2em;margin-bottom:8px}
+.contactbox{display:grid;grid-template-columns:1fr 360px;gap:50px;align-items:center}.contactbig{font-size:clamp(45px,7vw,76px);line-height:.9;font-weight:900;letter-spacing:-.05em;margin:14px 0 20px}.contactbig span{color:var(--yellow)}.contacttext{color:#888;max-width:520px}
+.qr{background:#fff;color:#111;border-radius:22px;padding:17px;text-align:center}.qr img{width:100%;display:block}.qr strong{display:block;font-size:11px;letter-spacing:.15em;margin-top:9px}
+footer{padding:35px 0;color:#666;font-size:11px;border-top:1px solid #202020}.foot{display:flex;justify-content:space-between}
+@media(max-width:850px){.nav{height:68px}.header-right{gap:8px}nav{display:none}.langs button{padding:7px 8px}.hero{min-height:930px}.direct{position:relative;right:auto;bottom:auto;margin-top:45px;width:min(100%,390px)}.grid{grid-template-columns:1fr 1fr}.dest{grid-template-columns:1fr 1fr}.contactbox{grid-template-columns:1fr}.qr{width:250px}.head{display:block}.head p{margin-top:18px}}
+@media(max-width:520px){.hero{padding-top:120px;min-height:900px}h1{font-size:54px}.lead{font-size:16px}.grid{gap:9px}.card{padding:18px;min-height:165px}.card h3{font-size:14px}.card p{font-size:12px}.place{padding:18px;font-size:15px}.section{padding:72px 0}.foot{display:block}.foot div+div{margin-top:8px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a href="#home" class="brand"><div class="taxi-logo" aria-label="Taxi logo"><i class="roof"></i><i class="body"></i><i class="check"></i></div><div><div class="logo">M<span>&</span>D TAXI</div><span class="sub">DAMIR MILOKANOVIĆ</span></div></a>
+<div class="header-right"><nav>
+<a href="#services" data-i="navServices">USLUGE</a>
+<a href="#destinations" data-i="navDest">DESTINACIJE</a>
+<a href="#contact" data-i="navContact">KONTAKT</a>
+</nav><div class="langs" aria-label="Language selector" title="Choose language">
+<button onclick="setLang('hr')" data-lang="hr" class="active">HR</button>
+<button onclick="setLang('en')" data-lang="en">EN</button>
+<button onclick="setLang('it')" data-lang="it">IT</button>
+<button onclick="setLang('de')" data-lang="de">DE</button>
+</div></div>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap">
+<div class="eyebrow" data-i="eyebrow">M&D TAXI • ISTRIA</div>
+<h1 data-i="heroTitle"><span>PRIVATNI TAXI</span><br>& TRANSFERI</h1>
+<p class="lead" data-i="lead">Pouzdan privatni taxi i transferi iz Istre prema Hrvatskoj, Sloveniji, Italiji i šire.</p>
+<div class="routes"><span class="route">ISTRIA</span><span class="route">CROATIA</span><span class="route">SLOVENIA</span><span class="route">ITALY</span></div>
+<div class="buttons"><a class="btn yellow" href="https://wa.me/385976043106" target="_blank" data-i="whatsapp">WHATSAPP</a><a class="btn dark" href="tel:+385976043106" data-i="call">NAZOVI ODMAH</a></div>
+<div class="direct"><small data-i="direct">DIREKTNA REZERVACIJA</small><div class="phone">+385 97 <b>604 31 06</b></div><span style="color:#888;font-size:13px" data-i="available">Nazovite ili pošaljite WhatsApp poruku Damiru.</span></div>
+</div></section>
+
+<section id="services"><div class="wrap"><div class="head"><div><div class="kicker" data-i="servicesKicker">USLUGE</div><h2 data-i="servicesTitle">Vožnja bez komplikacija.</h2></div><p data-i="servicesText">Od aerodroma do hotela, apartmana ili dužeg transfera — dogovor direktno s vozačem.</p></div>
+<div class="grid">
+<div class="card"><div class="icon">✈</div><h3 data-i="airport">Airport transfers</h3><p data-i="airportText">Preuzimanje i transfer do željene destinacije.</p></div>
+<div class="card"><div class="icon">▣</div><h3 data-i="hotel">Hotel & apartment</h3><p data-i="hotelText">Transferi za hotele, apartmane i privatni smještaj.</p></div>
+<div class="card"><div class="icon">◆</div><h3 data-i="private">Private rides</h3><p data-i="privateText">Privatne vožnje po Istri i prema drugim gradovima.</p></div>
+<div class="card"><div class="icon">↗</div><h3 data-i="international">International</h3><p data-i="internationalText">Slovenija, Italija, granica i duže međunarodne relacije.</p></div>
+</div></div></section>
+
+<section class="darksec" id="destinations"><div class="wrap"><div class="head"><div><div class="kicker" data-i="destKicker">DESTINACIJE</div><h2 data-i="destTitle">Istra i dalje.</h2></div><p data-i="destText">Fleksibilni transferi za goste, lokalne putnike i međunarodne relacije.</p></div>
+<div class="dest"><div class="place"><small>01</small>ISTRIA</div><div class="place"><small>02</small>CROATIA</div><div class="place"><small>03</small>SLOVENIA</div><div class="place"><small>04</small>ITALY</div></div></div></section>
+
+<section id="contact"><div class="wrap contactbox"><div><div class="kicker" data-i="contactKicker">KONTAKT</div><div class="contactbig" data-i="contactTitle">Trebate<br><span>vožnju?</span></div><p class="contacttext" data-i="contactText">Nazovite ili pošaljite WhatsApp poruku Damiru. Brz i direktan dogovor bez posrednika.</p><div class="buttons"><a class="btn yellow" href="https://wa.me/385976043106" target="_blank" data-i="whatsapp">WHATSAPP</a><a class="btn dark" href="tel:+385976043106">+385 97 604 31 06</a></div></div>
+<div class="qr"><img src="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=https%3A%2F%2Fwa.me%2F385976043106" alt="WhatsApp QR kod"><strong data-i="scan">SCAN TO CONTACT</strong></div></div></section>
+</main>
+
+<footer><div class="wrap foot"><div>© M&D TAXI — DAMIR MILOKANOVIĆ</div><div data-i="footer">ISTRIA • CROATIA • SLOVENIA • ITALY</div></div></footer>
+
+<script>
+const translations={
+hr:{
+navServices:"USLUGE",heroTitle:"<span>PRIVATNI TAXI</span><br>& TRANSFERI",navDest:"DESTINACIJE",navContact:"KONTAKT",eyebrow:"M&D TAXI • ISTRIA",
+lead:"Pouzdan privatni taxi i transferi iz Istre prema Hrvatskoj, Sloveniji, Italiji i šire.",
+whatsapp:"WHATSAPP",call:"NAZOVI ODMAH",direct:"DIREKTNA REZERVACIJA",available:"Nazovite ili pošaljite WhatsApp poruku Damiru.",
+servicesKicker:"USLUGE",servicesTitle:"Vožnja bez komplikacija.",servicesText:"Od aerodroma do hotela, apartmana ili dužeg transfera — dogovor direktno s vozačem.",
+airport:"Airport transferi",airportText:"Preuzimanje i transfer do željene destinacije.",
+hotel:"Hotel & apartman",hotelText:"Transferi za hotele, apartmane i privatni smještaj.",
+private:"Privatne vožnje",privateText:"Privatne vožnje po Istri i prema drugim gradovima.",
+international:"Međunarodni transferi",internationalText:"Slovenija, Italija, granica i duže međunarodne relacije.",
+destKicker:"DESTINACIJE",destTitle:"Istra i dalje.",destText:"Fleksibilni transferi za goste, lokalne putnike i međunarodne relacije.",
+contactKicker:"KONTAKT",contactTitle:"Trebate<br><span>vožnju?</span>",contactText:"Nazovite ili pošaljite WhatsApp poruku Damiru. Brz i direktan dogovor bez posrednika.",scan:"SKENIRAJ ZA KONTAKT",footer:"ISTRIA • CROATIA • SLOVENIA • ITALY"},
+en:{
+navServices:"SERVICES",heroTitle:"<span>PRIVATE TAXI</span><br>& TRANSFERS",navDest:"DESTINATIONS",navContact:"CONTACT",eyebrow:"M&D TAXI • ISTRIA",
+lead:"Reliable private taxi and transfers across Croatia, Slovenia, Italy and beyond.",
+whatsapp:"WHATSAPP",call:"CALL NOW",direct:"DIRECT BOOKING",available:"Call or message Damir directly.",
+servicesKicker:"SERVICES",servicesTitle:"Travel without the hassle.",servicesText:"From airports to hotels, apartments and long-distance transfers — book directly with the driver.",
+airport:"Airport transfers",airportText:"Pickup and transfer to your destination.",
+hotel:"Hotel & apartment",hotelText:"Transfers for hotels, apartments and private accommodation.",
+private:"Private rides",privateText:"Private rides across Istria and to other cities.",
+international:"International transfers",internationalText:"Slovenia, Italy, border crossings and long-distance routes.",
+destKicker:"DESTINATIONS",destTitle:"Istria and beyond.",destText:"Flexible transfers for guests, local travelers and international routes.",
+contactKicker:"CONTACT",contactTitle:"Need a<br><span>ride?</span>",contactText:"Call or send Damir a WhatsApp message. Fast, direct booking with no middleman.",scan:"SCAN TO CONTACT",footer:"ISTRIA • CROATIA • SLOVENIA • ITALY"},
+it:{
+navServices:"SERVIZI",heroTitle:"<span>TAXI PRIVATI</span><br>& TRANSFER",navDest:"DESTINAZIONI",navContact:"CONTATTO",eyebrow:"M&D TAXI • ISTRIA",
+lead:"Taxi privati e transfer affidabili in Croazia, Slovenia, Italia e oltre.",
+whatsapp:"WHATSAPP",call:"CHIAMA ORA",direct:"PRENOTAZIONE DIRETTA",available:"Chiama o scrivi direttamente a Damir.",
+servicesKicker:"SERVIZI",servicesTitle:"Viaggia senza pensieri.",servicesText:"Aeroporti, hotel, appartamenti e trasferimenti a lunga distanza — direttamente con il conducente.",
+airport:"Transfer aeroportuali",airportText:"Prelievo e transfer verso la destinazione desiderata.",
+hotel:"Hotel & appartamenti",hotelText:"Transfer per hotel, appartamenti e strutture private.",
+private:"Corse private",privateText:"Corse private in Istria e verso altre città.",
+international:"Transfer internazionali",internationalText:"Slovenia, Italia, confini e tratte internazionali.",
+destKicker:"DESTINAZIONI",destTitle:"Istria e oltre.",destText:"Transfer flessibili per ospiti, viaggiatori locali e tratte internazionali.",
+contactKicker:"CONTATTO",contactTitle:"Hai bisogno di<br><span>un taxi?</span>",contactText:"Chiama o invia un messaggio WhatsApp a Damir. Prenotazione rapida e diretta.",scan:"SCANSIONA PER CONTATTARE",footer:"ISTRIA • CROAZIA • SLOVENIA • ITALIA"},
+de:{
+navServices:"SERVICES",heroTitle:"<span>PRIVATE TAXI</span><br>& TRANSFERS",navDest:"ZIELE",navContact:"KONTAKT",eyebrow:"M&D TAXI • ISTRIEN",
+lead:"Zuverlässige private Taxi- und Transferservices in Kroatien, Slowenien, Italien und darüber hinaus.",
+whatsapp:"WHATSAPP",call:"JETZT ANRUFEN",direct:"DIREKTE BUCHUNG",available:"Damir direkt anrufen oder schreiben.",
+servicesKicker:"SERVICES",servicesTitle:"Einfach unterwegs.",servicesText:"Vom Flughafen zum Hotel, Apartment oder auf längeren Strecken — direkt beim Fahrer buchen.",
+airport:"Flughafentransfers",airportText:"Abholung und Transfer zu Ihrem Ziel.",
+hotel:"Hotel & Apartment",hotelText:"Transfers für Hotels, Apartments und private Unterkünfte.",
+private:"Privatfahrten",privateText:"Private Fahrten in Istrien und zu anderen Städten.",
+international:"Internationale Transfers",internationalText:"Slowenien, Italien, Grenzübertritte und lange Strecken.",
+destKicker:"ZIELE",destTitle:"Istrien und weiter.",destText:"Flexible Transfers für Gäste, Einheimische und internationale Fahrten.",
+contactKicker:"KONTAKT",contactTitle:"Sie brauchen<br><span>eine Fahrt?</span>",contactText:"Rufen Sie Damir an oder schreiben Sie ihm über WhatsApp. Schnell und direkt buchen.",scan:"SCAN ZUM KONTAKT",footer:"ISTRIEN • KROATIEN • SLOWENIEN • ITALIEN"}
+};
+function setLang(lang){
+document.documentElement.lang=lang;
+document.querySelectorAll("[data-i]").forEach(el=>{const k=el.dataset.i;if(translations[lang][k]!==undefined)el.innerHTML=translations[lang][k]});
+document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));
+localStorage.setItem("mdtaxiLang",lang);
+}
+setLang(localStorage.getItem("mdtaxiLang")||"hr");
+</script>
+</body></html>
